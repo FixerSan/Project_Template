@@ -102,6 +102,7 @@ public class ResourceManager
         go.name = prefab.name;
         return go;
     }
+
     // 오브젝트 파괴
     public void Destroy(GameObject _go)
     {
@@ -115,10 +116,10 @@ public class ResourceManager
     private string ChangeKey<T>(string _key) where T : Object
     {
         if (typeof(T) == typeof(GameObject)) _key = _key + ".prefab";
-        if (typeof(T) == typeof(TextAsset)) _key = _key + ".Data";
-        if (typeof(T) == typeof(AudioClip)) _key = _key + ".AudioClip";
-        if (typeof(T) == typeof(Sprite)) _key = _key + ".Sprite";
-        if (typeof(T) == typeof(RuntimeAnimatorController)) _key = _key + ".AnimatorController";
+        else if (typeof(T) == typeof(TextAsset)) _key = _key + ".Data";
+        else if (typeof(T) == typeof(AudioClip)) _key = _key + ".AudioClip";
+        else if (typeof(T) == typeof(Sprite)) _key = _key + ".sprite";
+        else if (typeof(T) == typeof(RuntimeAnimatorController)) _key = _key + ".controller";
 
         return _key;
     }
