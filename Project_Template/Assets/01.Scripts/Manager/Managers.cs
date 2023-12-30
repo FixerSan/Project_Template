@@ -20,6 +20,6 @@ public class Managers : Singleton<Managers>
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
     public static void GameStart()
     {
-        Managers.Resource.Load<>
+        Managers.Resource.Load<GameSettingsProfile>("");
     }
 }
